@@ -1,21 +1,16 @@
 import { React, useState, useEffect } from "react";
 
 
-const BlogForm = (props) => {
+
+
+const BlogForm = ({ blogArtist, blogTrack }) => {
     const [userName, setUsername] = useState("")
     const [blogPrivacy, setBlogPrivacy] = useState("")
-    const [blogCategory, setBlogCategory] = useState("");
-    const [blogGenre, setBlogGenre] = useState("");
+    const [userMood, setUserMood] = useState("");
     const [blogTitle, setBlogTitle] = useState("");
     const [blogContent, setBlogContent] = useState("");
-
-    const [artistName, setArtistName] = useState("");
-    const [trackName, setTrackName] = useState("");
-
-    //SETS
-    useEffect(() => {
-        setUsername(props.user.email)
-    },[])
+    const [artistName, setArtistName] = useState(""); //HIDE THIS - doesnt have to be filled out by user
+    const [trackName, setTrackName] = useState(""); //HIDE THIS - doesnt have to be filled out by user
 
 
     /** Handles blog submission **/
@@ -23,7 +18,7 @@ const BlogForm = (props) => {
         event.preventDefault();
         
         try {
-            const body = { blogPrivacy, blogCategory, blogGenre, blogTitle, blogContent, userName, artistName, trackName }
+            const body = { blogPrivacy, userMood, blogTitle, blogContent, userName, artistName, trackName }
             console.log(body)
             const response = await fetch("http://localhost:3001/userblog",
                 {
@@ -38,6 +33,15 @@ const BlogForm = (props) => {
         }
     }
     
+
+    /**HANDLES UPDATING artistName and trackName - triggers on changes to datas from either variables**/
+    useEffect(() => {
+        setArtistName(blogArtist)
+        console.log("This is the blogArtist: " + blogArtist)
+        setTrackName(blogTrack)
+        console.log("This is the blogTrack: " + blogTrack)
+        
+    },[blogArtist, blogTrack])
     
 
     /** Handles track Search **/
@@ -138,41 +142,9 @@ const BlogForm = (props) => {
                     id="usermood"
                     name="usermood"
                     placeholder="Your mood..."
-                    value={blogCategory}
-                    onChange={(event) => setBlogCategory(event.target.value)}
+                    value={userMood}
+                    onChange={(event) => setUserMood(event.target.value)}
                 />
-
-                <br/>
-                <br/>
-
-
-                <label for="bloggenre">Blog's Genre</label>
-                <br/>
-                <select
-                    name="bloggenre"
-                    id="bloggenre"
-                    value={blogGenre}
-                    onChange={(event) => setBlogGenre(event.target.value)}
-
-                >
-                    <option value="none">Please Select A Genre</option>
-                    <option value="rock">Rock</option>
-                    <option value="pop">Pop</option>
-                    <option value="hiphop">Hip Hop</option>
-                    <option value="rnb">RnB</option>
-                    <option value="country">Country</option>
-                    <option value="jazz">Jazz</option>
-                    <option value="metal">Metal</option>
-                    <option value="electronic dance music">Electronid Dance Music</option>
-                    <option value="rap">Rap</option>
-                    <option value="indie">Indie</option>
-                    <option value="reggae">Reggae</option>
-                    <option value="instrumental">Instrumental</option>
-                    <option value="soul">Soul</option>
-                    <option value="progressive">Progressive</option>
-
-
-                </select>
                 <br/>
                 <br/>
 

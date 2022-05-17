@@ -5,7 +5,7 @@ import SpotifyWebApi from "spotify-web-api-node"
 const GetUserProfile = (props) => {
 
 
-const handleLogOut = async (event) => {
+const handleUserProfile = async (event) => {
     props.spotifyApi.getMe()
   .then(function(data) {
     console.log('Some information about the authenticated user', data);
@@ -16,7 +16,7 @@ const handleLogOut = async (event) => {
 
   return (
     <div>
-        <button onClick={handleLogOut}>
+        <button onClick={handleUserProfile}>
         Get User Profile
         </button>
     </div>

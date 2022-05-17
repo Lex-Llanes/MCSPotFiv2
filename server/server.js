@@ -42,7 +42,9 @@ app.get('/', (req, res) => {
 
 
 
-/**********************************************************************************************************************/app.post("/refresh", (req, res) => {
+/**********************************************************************************************************************/
+/**ROUTE-REFRESH TOKEN**/
+app.post("/refresh", (req, res) => {
     const refreshToken = req.body.refreshToken
     const spotifyApi = new SpotifyWebApi({
       redirectUri: process.env.REDIRECT_URI,
@@ -50,7 +52,6 @@ app.get('/', (req, res) => {
       clientSecret: process.env.CLIENT_SECRET,
       refreshToken,
     })
-  
     spotifyApi
       .refreshAccessToken()
       .then(data => {
@@ -65,6 +66,7 @@ app.get('/', (req, res) => {
       })
   })
   
+/**ROUTE-LOGIN**/
 app.post("/login", (req, res) => {
   const code = req.body.code
   const spotifyApi = new SpotifyWebApi({
@@ -72,9 +74,6 @@ app.post("/login", (req, res) => {
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
   })
-  
-
-  
   spotifyApi
     .authorizationCodeGrant(code)
     .then(data => {
@@ -88,9 +87,8 @@ app.post("/login", (req, res) => {
       res.sendStatus(400)
     })
 })
-  
 
-
+/**ROUTE-LYRICS SEARCH**/
 app.get("/lyrics", async (req, res) => {
   const lyrics =
     (await lyricsFinder(req.query.artist, req.query.track)) || "No Lyrics Found"
@@ -101,10 +99,34 @@ app.get("/lyrics", async (req, res) => {
 
 ///*******************************************************************************************************************/
 //Not working needs more work - for logging out
+/**OUT OF COMMISSION - found a working way in the frontend (navigationbar.js component)**/
 app.get("/logout", async (req, res) => {
     const response = await fetch("https://accounts.spotify.com/en/logout")
 })
 ///********************************************************************************************************************/
+
+
+/**ROUTE-CREATE A NEW BLOG POST**/
+app.post('/userblog', async (req, res) => {
+  try {
+      const { blogPrivacy } = req.body;
+      const { userMood } = req.body;
+      const { blogTitle } = req.body;
+      const { blogContent } = req.body;
+      const { userName } = req.body;
+      const { artistName } = req.body;
+      const { trackName } = req.body;
+
+      const newblog = await db.query(
+          'INSERT INTO blogs(blog_title, blog_mood, blog_content, blog_privacy, username, artist, track) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *', [blogTitle, userMood, blogContent, blogPrivacy, userName, artistName, trackName]
+      )
+  } catch (error) {
+      console.error(error.message)
+  }
+})
+
+
+
 
 
 // console.log that your server is up and running

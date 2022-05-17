@@ -6,6 +6,8 @@ export default function useAuth(code) {
   const [refreshToken, setRefreshToken] = useState()
   const [expiresIn, setExpiresIn] = useState()
 
+
+  /**HANDLES GETTING ACCESS CODE - triggers on component mount when code state changes**/
   useEffect(() => {
     axios
       .post("http://localhost:3001/login", {
@@ -22,6 +24,8 @@ export default function useAuth(code) {
       })
   }, [code])
 
+
+  /**HANDLES TOKEN REFRESH - checks if there is a refreshToken or expiresIn, if not then refresh token **/
   useEffect(() => {
     if (!refreshToken || !expiresIn) return
     const interval = setInterval(() => {
