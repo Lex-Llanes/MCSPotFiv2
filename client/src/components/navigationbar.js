@@ -33,9 +33,11 @@ const NavigationBar = ( {code, setCode} ) => {
 
             <Navbar bg="success" variant="dark" fixed="top">
                 <Navbar.Brand>
-                    Navbar
+                    <div className="navbrand">
+                        M.C. Spotfi
+                    </div>
                 </Navbar.Brand>
-                {code ? <button onClick={handleLogOut}>Log Out</button> : <Login />}
+                <button onClick={handleLogOut}>Log Out</button>
                 <Nav variant="tabs">
 
 

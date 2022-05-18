@@ -1,3 +1,71 @@
+
+
+<p align="center">
+    <h1 align="center"><b>M.C. Spot Fi</b></h1>
+</p>
+
+## ABOUT
+
+Inspired by techtonica's medidation routine (where there are websites you can visit and search for medidation based on mood or feelings). I wanted to make a similiar experience where users can create blogs but tie in a song in to the mood of their blog. So that way other users can search for blogs and hopefully find music that that fits their current mood.
+
+
+## TECHNOLOGIES USED
+
+- PostgreSQL
+- Express
+- React
+- NodeJS
+- Spotify API (which includes using 0Auth2.0)
+
+
+## INSTALLTION
+
+###  PRE-REQUISITES
+
+<!-- Explain to use nvm and what version to use -->
+- Node - version 
+<!-- Maybe explain the steps to make one and what to do with client-id and secret-id -->
+<!-- Maybe provide the link -->
+- Spotify - create a Spotify App Account to link to the cloned app 
+
+```
+nvm use
+```
+
+
+<!-- USE QUICKTIME PLAYER TO RECORD -->
+
+
+## 
+
+
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
 ### Your First Express and React App
 Create full stack apps with React and Express. Run your client, server and do a restart of your dump db to have a full-stack project working in minutes
 

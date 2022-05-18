@@ -7,8 +7,8 @@ import CarouselCard from "./carouselcard.js"
 const CarouselComp = () => {
 
     return (
-        <>
-            <Carousel touch={true} interval={500}>
+        <div>
+            <Carousel touch={true} interval={500} >
 
                 <Carousel.Item>
                     {/* Checking if the Carousel Card component can be used */}
@@ -77,7 +77,7 @@ const CarouselComp = () => {
                 </Carousel.Item>
 
             </Carousel>
-        </>
+        </div>
     )
 }
 

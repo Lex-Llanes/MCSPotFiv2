@@ -10,7 +10,7 @@ npm install react-router-dom@6
 
 import './App.css';
 import { React, useState, useEffect } from "react"
-import { Nav, Navbar } from "react-bootstrap"
+import { Nav, Navbar, Button } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { isTrivialHref } from '@restart/ui/esm/Anchor';
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
@@ -40,47 +40,27 @@ function App() {
 
   return (
     <div>
-      <div className="navbar">
-        <NavigationBar code={code} setCode={setCode}/>
+
+      <div className="contentbody" style={{padding: 0, margin: 0}}>
+        {code ? <NavigationBar code={code} setCode={setCode}/> : <div className="d-grid gap-2" ><Login /></div>}
+        {code ? <Dashboard code={code} /> :  <CarouselComp/> }
       </div>
-      
-      <div className="contentbody">
-      <BrowserRouter>
-        <Routes>
-            <Route exact path= "/" />
-            <Route path="/blogpage"/>
-            <Route path="/usersblog"/>
-            <Route path="/searchblog"/>
-            <Route/>
-            <Route/>
-            <Route/>
-            <Route/>
-        </Routes>
-      </BrowserRouter>
-
-
-
-      {/*!! MAYBE MAKE LINKS - Make Carousel-comp be Main Page and Dashboard-comp be the blog form page !!*/}
-      {/* SUCCESS */}
-      {code ? <Dashboard code={code} /> : <CarouselComp/>}
-
-      </div>
-
-
 
 
       <BrowserRouter>
         <Routes>
-            <Route exact path= "/" element={<CarouselComp/>}></Route>
-            <Route></Route>
-            <Route></Route>
-            <Route></Route>
-            <Route></Route>
-            <Route></Route>
-            <Route></Route>
-            <Route></Route>
+            <Route exact path= "/" />
+            <Route path="/blogpage" />
+            <Route path="/usersblog" />
+            <Route path="/searchblog" />
+            <Route />
+            <Route />
+            <Route />
+            <Route />
         </Routes>
       </BrowserRouter>
+
+
 
     </div>
 
@@ -94,10 +74,10 @@ export default App
 
 
 //TESTIONG FONTS//
-Cupcake Ipsum
-Jelly-o gummi bears wafer. Oat cake cupcake bonbon toffee. Jelly tiramisu gummi bears jelly beans dragée dragée cupcake fruitcake. Jelly beans pastry toffee halvah caramels. Jujubes chocolate cake croissant powder marshmallow lemon drops jujubes gingerbread gingerbread. Gummi bears macaroon ice cream jujubes gingerbread sesame snaps sweet tootsie roll. Toffee candy donut chupa chups sugar plum liquorice muffin tiramisu. Jujubes icing croissant sweet gummi bears jelly beans gummies liquorice. Sweet roll fruitcake candy gummies marshmallow. Sweet roll topping pastry oat cake chocolate cake. Oat cake jelly beans marshmallow jelly-o. Bear claw chocolate carrot cake chocolate cake marzipan pastry chocolate danish gummies. Sweet roll topping marshmallow.
+// Cupcake Ipsum
+// Jelly-o gummi bears wafer. Oat cake cupcake bonbon toffee. Jelly tiramisu gummi bears jelly beans dragée dragée cupcake fruitcake. Jelly beans pastry toffee halvah caramels. Jujubes chocolate cake croissant powder marshmallow lemon drops jujubes gingerbread gingerbread. Gummi bears macaroon ice cream jujubes gingerbread sesame snaps sweet tootsie roll. Toffee candy donut chupa chups sugar plum liquorice muffin tiramisu. Jujubes icing croissant sweet gummi bears jelly beans gummies liquorice. Sweet roll fruitcake candy gummies marshmallow. Sweet roll topping pastry oat cake chocolate cake. Oat cake jelly beans marshmallow jelly-o. Bear claw chocolate carrot cake chocolate cake marzipan pastry chocolate danish gummies. Sweet roll topping marshmallow.
 
-Wafer icing cotton candy oat cake. Toffee muffin jelly jelly beans toffee. Tart topping tiramisu tiramisu jelly. Danish chocolate chupa chups ice cream tootsie roll topping chocolate. Sesame snaps jelly topping tiramisu gummi bears. Cheesecake marzipan bonbon lemon drops. Wafer macaroon donut macaroon pudding pudding cupcake. Pie candy icing pastry fruitcake biscuit jelly beans chupa chups jelly. Powder cookie liquorice danish chocolate. Soufflé lemon drops jelly beans tart wafer. Bear claw tiramisu muffin jelly-o donut cake. Cupcake macaroon pudding halvah pudding tootsie roll cupcake. Cake cake jelly tart biscuit biscuit wafer icing. Macaroon cupcake cake cupcake tart brownie.
+// Wafer icing cotton candy oat cake. Toffee muffin jelly jelly beans toffee. Tart topping tiramisu tiramisu jelly. Danish chocolate chupa chups ice cream tootsie roll topping chocolate. Sesame snaps jelly topping tiramisu gummi bears. Cheesecake marzipan bonbon lemon drops. Wafer macaroon donut macaroon pudding pudding cupcake. Pie candy icing pastry fruitcake biscuit jelly beans chupa chups jelly. Powder cookie liquorice danish chocolate. Soufflé lemon drops jelly beans tart wafer. Bear claw tiramisu muffin jelly-o donut cake. Cupcake macaroon pudding halvah pudding tootsie roll cupcake. Cake cake jelly tart biscuit biscuit wafer icing. Macaroon cupcake cake cupcake tart brownie.
 
 // Cupcake brownie halvah gingerbread gingerbread brownie danish muffin. Caramels gummi bears pie. Sugar plum sweet roll chocolate gingerbread jelly halvah muffin. Marzipan macaroon bonbon gummies cake gummies lemon drops. Soufflé bonbon cake. Sweet roll marzipan cake tootsie roll sweet. Sweet tart marzipan candy carrot cake topping. Pudding pudding gummies bonbon icing chupa chups. Icing jelly-o dragée. Cupcake soufflé cheesecake jelly beans. Sesame snaps gummi bears bonbon pie tiramisu. Cupcake carrot cake danish. Biscuit gummi bears croissant jujubes.
 

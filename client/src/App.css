@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,7 +38,7 @@
     transform: rotate(360deg);
   }
 }
-
+ */
 
 /**********************************************************************************************************************/
 
@@ -46,4 +48,11 @@
 
   /* height just to test navbar fixed */
   height: 3000px;
+}
+
+
+
+.navbrand {
+  color: rgb(192, 24, 100);
+
 }
