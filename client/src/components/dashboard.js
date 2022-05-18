@@ -24,12 +24,14 @@ const spotifyApi = new SpotifyWebApi({
 /** The prop { code } is coming from App.js **/
 const Dashboard = ({ code }) => {
     /*------------------------------------------------------------------------------------------------------------------
-    Take the code we passed into this component and sends it to our useAuth-component hook we made, which returns an accessToken to this component - it then triggers the useEffect down below and passes the accessToken to the spotifyApi-wrapper we are using
+    Take the code we passed into this component and sends it to our useAuth-component hook we made, which returns an 
+    accessToken to this component - it then triggers the useEffect down below and passes the accessToken to the spotifyApi-wrapper we are using
     ------------------------------------------------------------------------------------------------------------------*/
     const accessToken = useAuth(code)  //
     //*********************************//
     /*------------------------------------------------------------------------------------------------------------------
-    Triggers on component mount - Check if there is an accessToken, if there is, then pass the accessToken to spotifyApi (useEffect triggers  whenever accessToken gets new data)
+    Triggers on component mount - Check if there is an accessToken, if there is, then pass the accessToken to spotifyApi 
+    (useEffect triggers  whenever accessToken gets new data)
     ------------------------------------------------------------------------------------------------------------------*/
     useEffect(() => {                           //
         if(!accessToken) return                 //
