@@ -2,6 +2,8 @@ import { React, useState, useEffect } from "react";
 
 
 
+/**USE CSS BOX-SHADOW FOR EACH FIELD?**/
+
 
 const BlogForm = ({ blogArtist, blogTrack }) => {
     const [userName, setUsername] = useState("")
@@ -69,42 +71,7 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
 
     return (
         <div>
-            <form onSubmit={handleTrackSearch}>
-                <br/>
-                <label for="artistname">Artist Name</label>
-                <br/>
-                <input
-                    id="artistname"
-                    name="artistname"
-                    placeholder="Enter Artist Name..."
-                    value={artistName}
-                    onChange={(event) => setArtistName(event.target.value)}
-                />
-                <br/>
-                <br/>
-
-                <label for="trackname">Track Name</label>
-                <br/>
-                <input 
-                    id="trackname"
-                    name="trackname"
-                    placeholder="Enter Track Name..."
-                    value={trackName}
-                    onChange={(event) => setTrackName(event.target.value)}
-                />
-                <br/>
-                <br/>
-
-                <input
-                    value="Submit"
-                    type="submit"
-                />
-
-            </form>
-
-
-
-
+            
             {/* BLOG FORM */}
             <form onSubmit={handleSubmitBlog}>
                 

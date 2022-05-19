@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, Navbar, NavbarBrand } from 'react-bootstrap'
+import { Button, Nav, Navbar, NavbarBrand } from 'react-bootstrap'
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
 
 /******************************************************************************************************/
@@ -31,13 +31,13 @@ const NavigationBar = ( {code, setCode} ) => {
 
 
 
-            <Navbar bg="success" variant="dark" fixed="top">
+            <Navbar className="navigationbar" variant="dark" bg="info" fixed="top">
                 <Navbar.Brand>
                     <div className="navbrand">
                         M.C. Spotfi
                     </div>
                 </Navbar.Brand>
-                <button onClick={handleLogOut}>Log Out</button>
+                <Button onClick={handleLogOut}>Log Out</Button>
                 <Nav variant="tabs">
 
 

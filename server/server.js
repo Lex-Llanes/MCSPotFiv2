@@ -5,11 +5,17 @@ npm install spotify-web-api-node
 npm install lyrics-finder
 */
 
+/**********************************************************************************************************************/
+const path = require('path');
+const REACT_BUILD_DIR = path.join(__dirname, '..', 'client', 'build');
+/**********************************************************************************************************************/
+
 const express = require('express');
 const fetch = require('node-fetch')
 const cors = require('cors');
 require('dotenv').config()
 const db = require('../server/db/db-connection.js'); 
+
 /**********************************************************************************************************************/const bodyParser = require("body-parser")
 const lyricsFinder = require("lyrics-finder")
 const SpotifyWebApi = require("spotify-web-api-node")
@@ -125,6 +131,20 @@ app.post('/userblog', async (req, res) => {
   }
 })
 
+
+/**ROUTE-CREATE A NEW BLOG POST**/
+app.get('/blogsearch', async (req, res) => {
+  try {
+    const { mood } = req.query;
+
+    const blogs = await db.query(
+      "SELECT * FROM blogs WHERE blog_mood ILIKE $1", [`%${mood}%`]
+      );
+    res.json(blogs.rows)
+  } catch (error) {
+    console.error(error.message)
+  }
+})
 
 
 

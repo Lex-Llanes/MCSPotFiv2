@@ -21,6 +21,7 @@ const spotifyApi = new SpotifyWebApi({
 
 
 
+
 /** The prop { code } is coming from App.js **/
 const Dashboard = ({ code }) => {
     /*------------------------------------------------------------------------------------------------------------------
@@ -106,7 +107,6 @@ const Dashboard = ({ code }) => {
             })
         )
         })
-
         return () => (cancel = true)
     }, [search, accessToken])
 
@@ -114,23 +114,21 @@ const Dashboard = ({ code }) => {
 
 
 
-
     return (
-        <div>
+        <div className="dashboardbody" >
 
             {/* LEFT SIDE OF PAGE */}
             <div className="dashboard-left">
                 {/* <Logout code={code}/> */}
-                <GetUserProfile spotifyApi={spotifyApi}/>
+                {/* <GetUserProfile spotifyApi={spotifyApi}/> */}
                 <Form.Control
                     type="search"
                     placeholder="Search Songs/Artists"
                     value={search}
                     onChange={e => setSearch(e.target.value)}
-                />
+                />  
 
-                {/* Track Search - component */}
-                <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
+                <div className="search" >
                     {searchResults.map(track => (
                     <TrackSearchResult
                         track={track}
@@ -139,18 +137,27 @@ const Dashboard = ({ code }) => {
                     />
                     ))}
                     {searchResults.length === 0 && (
-                    <div className="text-center" style={{ whiteSpace: "pre" }}>
+                    <div className="" style={{ whiteSpace: "pre"}}>
                         {lyrics}
                     </div>
                     )}
                 </div>
 
-                {/* Player - component */}
-                <div>
-                    <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
-                </div>
 
+
+
+
+
+
+
+
+
+
+
+
+                    <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
             </div>
+
 
             {/* RIGHT SIDE OF PAGE */}
             <div className="dashboard-right">
