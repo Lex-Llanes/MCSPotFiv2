@@ -6,7 +6,7 @@ const AUTH_URL =
 
 export default function Login() {
   return (
-      <Button variant="info" size="lg" href={AUTH_URL} style={{padding: 15, height: 70}} >
+      <Button className="loginbutton" variant="info" size="lg" href={AUTH_URL} >
         Login With Spotify
       </Button>
   )
