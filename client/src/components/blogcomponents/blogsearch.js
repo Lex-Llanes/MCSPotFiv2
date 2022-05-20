@@ -5,7 +5,7 @@ import axios from 'axios';
 const BlogSearch = () => {
 
   const [blogList, setBlogList] = useState([]);
-  const [mood, setMood] = useState("");
+  const [mood, setMood] = useState("happy");
 
   const handleMoodForm = async (event) => {
     event.preventDefault()
@@ -32,28 +32,36 @@ const BlogSearch = () => {
 
 
   return (
+    <div>
+      <Form onSubmit={handleMoodForm}>
+        <Form.Group className="moodsearch" controlId="formMoodSearch">
+          <Form.Label>
+            MOOD
+          </Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="What mood are you looking for..."
+            value={mood}
+            onChange={(event) => setMood(event.target.value)}
+          />
+          <Form.Text>
+            Let the music set your mood
+          </Form.Text>
+        </Form.Group>
 
-    <Form onSubmit={handleMoodForm}>
-      <Form.Group className="moodsearch" controlId="formMoodSearch">
-        <Form.Label>
-          MOOD
-        </Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="What mood are you looking for..."
-          value={mood}
-          onChange={(event) => setMood(event.target.value)}
-        />
-        <Form.Text>
-          Let the music set your mood
-        </Form.Text>
-      </Form.Group>
+        <Button type="submit" onClick={handleMoodForm} variant="primary">
+          Submit
+        </Button>
+      </Form>
 
-      <Button type="submit" onClick={handleMoodForm} variant="primary">
-        Submit
-      </Button>
-    </Form>
-    
+    <div>
+      {blogList}
+    </div>
+
+
+
+
+    </div>
   )
 }
 
