@@ -55,7 +55,7 @@ const BlogSearch = () => {
       </Form>
 
     <div>
-      {blogList}
+      {blogList[0]}
     </div>
 
 
