@@ -29,6 +29,7 @@ const PORT = 3001;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(REACT_BUILD_DIR));
 /**********************************************************************************************************************/
 //app.use(bodyParser.json()) - this is technically app.use(express.json()) but you can use whichever
 /*
