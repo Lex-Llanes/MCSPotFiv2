@@ -10,7 +10,8 @@ export default function useAuth(code) {
   /**HANDLES GETTING ACCESS CODE - triggers on component mount when code state changes**/
   useEffect(() => {
     axios
-      .post("http://localhost:3001/login", {
+      // .post("http://localhost:3001/login"
+      .post("/login", {
         code,
       })
       .then(res => {
@@ -30,7 +31,8 @@ export default function useAuth(code) {
     if (!refreshToken || !expiresIn) return
     const interval = setInterval(() => {
       axios
-        .post("http://localhost:3001/refresh", {
+        // .post("http://localhost:3001/refresh"
+        .post("/refresh", {
           refreshToken,
         })
         .then(res => {

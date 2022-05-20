@@ -10,7 +10,8 @@ const BlogSearch = () => {
   const handleMoodForm = async (event) => {
     event.preventDefault()
     try {
-      const response = await fetch(`http://localhost:3001/blogsearch/?mood=${mood}`)
+      // const response = await fetch(`http://localhost:3001/blogsearch/?mood=${mood}`)
+      const response = await fetch(`/blogsearch/?mood=${mood}`)
       const blogList = await response.json()
 
       console.log(blogList)
@@ -21,7 +22,8 @@ const BlogSearch = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/blogsearch/?mood=${mood}`)
+      // .get(`http://localhost:3001/blogsearch/?mood=${mood}`)
+      .get(`/blogsearch/?mood=${mood}`)
       .then(res => {
         setBlogList(res)
         console.log(blogList)

@@ -8,8 +8,8 @@ const CarouselCard = () => {
 
     const getBlogs = async (event) => {
         event.preventDefault();
-
-        const response = await fetch("http://localhost:3001/blogslist");
+        // const response = await fetch("http://localhost:3001/blogslist");
+        const response = await fetch("/blogslist");
         const data = response.json();
 
         setBlogList(data);

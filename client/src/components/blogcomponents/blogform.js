@@ -22,7 +22,8 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
         try {
             const body = { blogPrivacy, userMood, blogTitle, blogContent, userName, artistName, trackName }
             console.log(body)
-            const response = await fetch("http://localhost:3001/userblog",
+            // const response = await fetch("http://localhost:3001/userblog"
+            const response = await fetch("/userblog",
                 {
                     method: "POST",
                     headers: {"Content-Type": "application/json"},
@@ -52,8 +53,8 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
         event.preventDefault()
         try {
             const body = { artistName, trackName }
-
-            const response = await fetch(`http://localhost:3001/track`, 
+            // const response = await fetch(`http://localhost:3001/track`
+            const response = await fetch(`/track`, 
                 {
                     method: "POST",
                     headers: {"Content-Type": "application/json"},
