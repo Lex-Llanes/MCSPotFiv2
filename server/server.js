@@ -127,6 +127,7 @@ app.post('/userblog', async (req, res) => {
       const newblog = await db.query(
           'INSERT INTO blogs(blog_title, blog_mood, blog_content, blog_privacy, username, artist, track) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *', [blogTitle, userMood, blogContent, blogPrivacy, userName, artistName, trackName]
       )
+      console.log(newblog)
   } catch (error) {
       console.error(error.message)
   }
