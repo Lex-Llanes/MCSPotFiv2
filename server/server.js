@@ -150,7 +150,6 @@ app.get('/blogsearch', async (req, res) => {
 
 
 
-
 // console.log that your server is up and running
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
