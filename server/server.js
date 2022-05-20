@@ -114,7 +114,7 @@ app.get("/logout", async (req, res) => {
 
 
 /**ROUTE-CREATE A NEW BLOG POST**/
-app.post('/userblog', async (req, res) => {
+app.post('/userblog', cors(), async (req, res) => {
   try {
       const { blogPrivacy } = req.body;
       const { userMood } = req.body;
