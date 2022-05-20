@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react'
-import { Button, Form } from "react-bootstrap"
+import { Accordion, Button, Form } from "react-bootstrap"
 import axios from 'axios';
 
 const BlogSearch = ({ mood, setMood }) => {
@@ -28,11 +28,14 @@ const BlogSearch = ({ mood, setMood }) => {
   return (
     <div className='blogsearch'>
       {blogList.map((list) => (
-        <div>{list.blog_title}</div>
+        <Accordion className="blogaccordion" defaultActiveKey={"0"} alwaysOpen flush>
+          <Accordion.Item eventKey={list}>
+            <Accordion.Header><b>Blog Title:</b> - {list.blog_title}</Accordion.Header>
+              <Accordion.Body><b>Suggested Song:</b> {list.artist} - {list.track}</Accordion.Body>
+              <Accordion.Body><i>{list.blog_content}</i></Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
       ))}
-      <h1>This is the blogsearch</h1>
-
-
     </div>
   )
 }
