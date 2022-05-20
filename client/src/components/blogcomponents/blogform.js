@@ -6,6 +6,7 @@ import { React, useState, useEffect } from "react";
 
 
 const BlogForm = ({ blogArtist, blogTrack }) => {
+    const [blogId, setBlogId] = useState(0)
     const [userName, setUsername] = useState("")
     const [blogPrivacy, setBlogPrivacy] = useState("")
     const [userMood, setUserMood] = useState("");
@@ -18,9 +19,10 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
     /** Handles blog submission **/
     const handleSubmitBlog = async (event) => {
         event.preventDefault();
-        
+        const randomId = Math.random() * 9999999
+        setBlogId(randomId)
         try {
-            const body = { blogPrivacy, userMood, blogTitle, blogContent, userName, artistName, trackName }
+            const body = { blogId, blogPrivacy, userMood, blogTitle, blogContent, userName, artistName, trackName }
             console.log(body)
             // const response = await fetch("http://localhost:3001/userblog"
             const response = await fetch("/userblog",
