@@ -13,7 +13,7 @@ const CarouselCard = () => {
         const data = response.json();
 
         setBlogList(data);
-        console.log(blogList)
+        console.log("This is the carouselcard: " + blogList)
     }
 
 
@@ -21,9 +21,8 @@ const CarouselCard = () => {
     return(
         <div className="carouselcard">
             <h1>CAROUSEL CARD IS IMPORTING</h1>
-            <h1>Title</h1>
-            <p>Category:  </p>
-            <p>Genre:  </p>
+            <h1>Title: Random Title</h1>
+            <p>Mood: Sad  </p>
             <p className="carouselcardpar">Content: Wafer chupa chups bonbon gummies icing lollipop gummies. Donut gummi bears chocolate cake pudding cheesecake cheesecake. Sesame snaps jelly-o fruitcake gingerbread icing pudding tiramisu. Marzipan topping tiramisu chocolate bar chocolate cake. Donut jelly tootsie roll oat cake macaroon. Toffee pie apple pie dragée powder fruitcake soufflé. Powder toffee apple pie bear claw toffee tart. Toffee shortbread lollipop topping gummi bears ice cream macaroon biscuit. Bear claw carrot cake caramels gingerbread chocolate bar. Soufflé donut chupa chups cupcake ice cream.
 Shortbread candy topping cupcake jelly beans. Tart gummies donut bonbon sweet roll ice cream cookie. Tiramisu cookie wafer shortbread chocolate donut donut. Oat cake chocolate bar bonbon oat cake chocolate shortbread. Apple pie oat cake powder dessert topping topping. Sweet bonbon cotton candy cotton candy oat cake. Caramels danish donut oat cake chupa chups candy canes chocolate bar chupa chups. Toffee cookie chocolate bar halvah chocolate cake icing jelly-o. Chocolate bear claw chocolate bar tart jujubes gingerbread. Lemon drops gummi bears sweet pie tiramisu croissant cake chocolate.
 Gummi bears marzipan dragée ice cream tiramisu shortbread. Bear claw pudding carrot cake gummi bears chocolate. Sugar plum sugar plum chocolate bar chocolate bar cake cupcake. Croissant lollipop carrot cake icing gummies jelly-o donut. Gummi bears gingerbread jelly cake sugar plum sugar plum. Toffee jelly jelly-o brownie jujubes gummies. Chocolate donut sweet bonbon brownie chocolate powder.

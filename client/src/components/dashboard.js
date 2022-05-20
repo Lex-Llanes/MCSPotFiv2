@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react"
-import { Container, Form } from "react-bootstrap"
+import { Container, Form, FormControl } from "react-bootstrap"
 import SpotifyWebApi from "spotify-web-api-node"
 import axios from "axios"
 /******************************************************************************************************/
 //Component Imports//
 import useAuth from "./useAuth"
 import Player from "./player"
-import GetUserProfile from "./getuserprofile"
 import TrackSearchResult from "./tracksearch"
-import Logout from "./logout"
 import BlogForm from "./blogcomponents/blogform"
+import BlogSearch from "./blogcomponents/blogsearch"
 /******************************************************************************************************/
 
 
@@ -43,6 +42,9 @@ const Dashboard = ({ code }) => {
     /**Create a state for selected artist and track part of blog**/
     const [blogArtist, setBlogArtist] = useState()
     const [blogTrack, setBlogTrack] = useState()
+
+
+    const [mood, setMood] = useState("");
     
 
     const [search, setSearch] = useState("")
@@ -144,25 +146,20 @@ const Dashboard = ({ code }) => {
                     )}
                 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
                     <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
             </div>
 
 
             {/* RIGHT SIDE OF PAGE */}
             <div className="dashboard-right">
-                <BlogForm blogArtist={blogArtist} blogTrack={blogTrack} />
+                <FormControl 
+                    type="search"
+                    placeholder="Search for a blog..."
+                    value={mood}
+                    onChange={(event) => setMood(event.target.value)}
+                />
+                {mood ? <BlogSearch mood={mood} setMood={setMood} /> : <BlogForm blogArtist={blogArtist} blogTrack={blogTrack} />}
+                {/* <BlogSearch mood={mood} setMood={setMood} /> */}
             </div>
 
         </div>

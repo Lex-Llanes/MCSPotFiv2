@@ -74,13 +74,13 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
 
 
     return (
-        <div>
+        <div className="blogform">
             
             {/* BLOG FORM */}
             <form onSubmit={handleSubmitBlog}>
                 
 
-                <br/>   
+                {/* <br/>   
                 <input 
                     id="username"
                     name="username"
@@ -89,7 +89,7 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
                     onChange={(event) => setUsername(event.target.value)}
                 />
                 <br/>
-                <br/>
+                <br/> */}
 
                 <label for="blogprivacy">Blog Privacy</label>
                 <br/>

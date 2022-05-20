@@ -2,63 +2,35 @@ import { React, useState, useEffect } from 'react'
 import { Button, Form } from "react-bootstrap"
 import axios from 'axios';
 
-const BlogSearch = () => {
+const BlogSearch = ({ mood, setMood }) => {
 
   const [blogList, setBlogList] = useState([]);
-  const [mood, setMood] = useState("happy");
+  // const [mood, setMood] = useState("happy");
 
-  const handleMoodForm = async (event) => {
-    event.preventDefault()
+  async function getBlogs (mood, event) {
     try {
       // const response = await fetch(`http://localhost:3001/blogsearch/?mood=${mood}`)
       const response = await fetch(`/blogsearch/?mood=${mood}`)
-      const blogList = await response.json()
+      const blogs = await response.json()
 
-      console.log(blogList)
+      setBlogList(blogs)
     } catch (error) {
       console.error(error.message)
     }
   }
 
-  useEffect(() => {
-    axios
-      // .get(`http://localhost:3001/blogsearch/?mood=${mood}`)
-      .get(`/blogsearch/?mood=${mood}`)
-      .then(res => {
-        setBlogList(res)
-        console.log(blogList)
-      })
+
+  useEffect(()=>{
+    getBlogs(mood);
+    console.log(blogList)
   },[mood])
 
-
   return (
-    <div>
-      <Form onSubmit={handleMoodForm}>
-        <Form.Group className="moodsearch" controlId="formMoodSearch">
-          <Form.Label>
-            MOOD
-          </Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="What mood are you looking for..."
-            value={mood}
-            onChange={(event) => setMood(event.target.value)}
-          />
-          <Form.Text>
-            Let the music set your mood
-          </Form.Text>
-        </Form.Group>
-
-        <Button type="submit" onClick={handleMoodForm} variant="primary">
-          Submit
-        </Button>
-      </Form>
-
-    <div>
-      {blogList[0]}
-    </div>
-
-
+    <div className='blogsearch'>
+      {blogList.map((list) => (
+        <div>{list.blog_title}</div>
+      ))}
+      <h1>This is the blogsearch</h1>
 
 
     </div>

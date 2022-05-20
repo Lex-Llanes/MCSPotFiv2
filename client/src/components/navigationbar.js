@@ -5,7 +5,6 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
 /******************************************************************************************************/
 //Component Imports//
 import Dashboard from './dashboard'
-import Login from './login'
 /******************************************************************************************************/
 
 
@@ -30,6 +29,7 @@ const NavigationBar = ( {code, setCode} ) => {
         <div>
 
 
+        <BrowserRouter>
 
             <Navbar className="navigationbar" variant="dark" bg="info" fixed="top">
                 <Navbar.Brand>
@@ -38,12 +38,23 @@ const NavigationBar = ( {code, setCode} ) => {
                     </div>
                 </Navbar.Brand>
                 <Button onClick={handleLogOut}>Log Out</Button>
-                <Nav variant="tabs">
-
-
-                </Nav>
-
+                {/* <Nav.Link href='/carousel'>Carousel</Nav.Link> */}
+                {/* <Nav.Link href='/blogsearch'>Blog Search</Nav.Link> */}
+                <Nav.Link></Nav.Link>
+                <Nav.Link></Nav.Link>
             </Navbar>
+
+
+            <Routes>
+                <Route exact path= "/" />
+                <Route path="/dashboard" element={<Dashboard code={code} />} />
+                {/* <Route path="/blogsearch" element={<BlogSearch />}/> */}
+                <Route />
+                <Route />
+                <Route />
+                <Route />
+            </Routes>
+        </BrowserRouter>
 
         </div>
     )
