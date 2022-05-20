@@ -19,8 +19,9 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
     /** Handles blog submission **/
     const handleSubmitBlog = async (event) => {
         event.preventDefault();
-        const randomId = Math.random() * 9999999
+        const randomId = Math.floor(Math.random() * 1000000) + Math.floor(Math.random() * 10000)
         setBlogId(randomId)
+        console.log(blogId)
         try {
             const body = { blogId, blogPrivacy, userMood, blogTitle, blogContent, userName, artistName, trackName }
             console.log(body)
