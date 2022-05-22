@@ -33,43 +33,6 @@
 }
 
 
-/* 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
- */
-
 /**********************************************************************************************************************/
 
 /* Needs atleast margin-top: 40px for the content body to show from underneath the navbar */
@@ -119,50 +82,71 @@
   position: relative;
 }
 
-.search {
-  box-shadow:  1px 1px 10px 1px rgb(0, 0, 0);
-  border-radius: 5px;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  height: 900px;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-}
+  .search 
+  {
+    box-shadow:  1px 1px 10px 1px rgb(0, 0, 0);
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
 /* END - LEFT DASHBOARD */
 
 
 
 /* START - RIGHT DASHBOARD */
-.dashboard-right {
+.dashboard-right 
+{
   size: 100%;
   width: 50%;
   padding: 2%;
   float: left;
 }
+  .blogsearch 
+  {
+    box-shadow:  1px 1px 10px 1px rgb(0, 0, 0);
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+    .blogaccordion 
+    {
+      box-shadow:  1px 1px 10px 1px rgb(0, 0, 0);
+      box-shadow: inset 1px 1px 10px 1px rgb(226, 105, 105);
+    }
 
 
-.blogsearch {
-  box-shadow:  1px 1px 10px 1px rgb(0, 0, 0);
-  border-radius: 5px;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  height: 900px;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-}
+  .blogform 
+  {
+    box-shadow:  1px 1px 10px 1px rgb(0, 0, 0);
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
 
-.blogform {
-  box-shadow:  1px 1px 10px 1px rgb(0, 0, 0);
-  border-radius: 5px;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  height: 900px;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-}
+
+
+  .userblogs {
+    box-shadow:  inset 1px 1px 10px 1px rgb(0, 0, 0);
+    float: left;
+    width: 100%;
+    padding: 5%;
+    border-radius: 5px;
+  }
+    .blogaccordion {
+      box-shadow:  1px 1px 20px 1px rgb(0, 0, 0);
+    }
 /* END - RIGHT DASHBOARD */
 
 
@@ -205,3 +189,87 @@
 .carouselcardpar {
 
 }
+
+
+.cardtitle {
+  box-shadow: 3px 3px 10px 3px rgb(0, 0, 0), -1em 0px .4em 1px rgb(0, 0, 0);
+  margin: 1%;
+}
+.cardmood {
+  margin: 20px;
+  box-shadow: 3px 3px 10px  3px rgb(0, 0, 0), -1em 0px .9em rgb(0, 0, 0);
+}
+.cardbody {
+  margin: 2%;
+  box-shadow: 3px 3px 10px  3px rgb(0, 0, 0), -1em 0px .9em rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+.blogforminputs{
+  box-shadow: 1px 1px 10px .5px rgb(0, 0, 0);
+  /* box-shadow: inset 1px 1px 10px 2px rgb(3, 200, 190); */
+  border-radius: 10px;
+  text-align: center;
+  font-size: medium;
+  background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+ */
