@@ -116,7 +116,7 @@ app.get("/logout", async (req, res) => {
 /**ROUTE-CREATE A NEW BLOG POST**/
 app.post('/userblog', cors(), async (req, res) => {
   try {
-      const { blogId } = req.body;
+
       const { blogPrivacy } = req.body;
       const { userMood } = req.body;
       const { blogTitle } = req.body;
@@ -126,7 +126,7 @@ app.post('/userblog', cors(), async (req, res) => {
       const { trackName } = req.body;
 
       const newblog = await db.query(
-          'INSERT INTO blogs(blog_id, blog_title, blog_mood, blog_content, blog_privacy, username, artist, track) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *', [blogId, blogTitle, userMood, blogContent, blogPrivacy, userName, artistName, trackName]
+          'INSERT INTO blogs(blog_title, blog_mood, blog_content, blog_privacy, username, artist, track) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *', [blogTitle, userMood, blogContent, blogPrivacy, userName, artistName, trackName]
       )
       console.log(newblog)
   } catch (error) {
@@ -135,7 +135,7 @@ app.post('/userblog', cors(), async (req, res) => {
 })
 
 
-/**ROUTE-CREATE A NEW BLOG POST**/
+/**ROUTE-GET BLOG BASED ON MOOD**/
 app.get('/blogsearch', async (req, res) => {
   try {
     const { mood } = req.query;
@@ -149,7 +149,19 @@ app.get('/blogsearch', async (req, res) => {
   }
 })
 
+/**ROUTE-GET CURRENT USER BLOGS**/
+app.get('/userblogs', async (req, res) => {
+  try {
+    const { userName } = req.query;
 
+    const blogs = await db.query(
+      "SELECT * FROM blogs WHERE username ILIKE $1", [`%${userName}%`]
+      );
+    res.json(blogs.rows)
+  } catch (error) {
+    console.error(error.message)
+  }
+})
 
 // console.log that your server is up and running
 app.listen(PORT, () => {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Container, Form, FormControl } from "react-bootstrap"
+import { Accordion, Container, Form, FormControl } from "react-bootstrap"
 import SpotifyWebApi from "spotify-web-api-node"
 import axios from "axios"
 /******************************************************************************************************/
@@ -9,6 +9,7 @@ import Player from "./player"
 import TrackSearchResult from "./tracksearch"
 import BlogForm from "./blogcomponents/blogform"
 import BlogSearch from "./blogcomponents/blogsearch"
+import UserBlogs from "./blogcomponents/userblogs"
 /******************************************************************************************************/
 
 
@@ -161,6 +162,10 @@ const Dashboard = ({ code }) => {
                 {mood ? <BlogSearch mood={mood} setMood={setMood} /> : <BlogForm blogArtist={blogArtist} blogTrack={blogTrack} />}
                 {/* <BlogSearch mood={mood} setMood={setMood} /> */}
             </div>
+
+            <div className="userblogsdiv"><UserBlogs/></div>
+            
+            
 
         </div>
     )
