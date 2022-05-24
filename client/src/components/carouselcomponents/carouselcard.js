@@ -20,7 +20,6 @@ const CarouselCard = () => {
 
     return(
         <div className="carouselcard">
-            <h1 className="">CAROUSEL CARD IS IMPORTING</h1>
             <h1 className="cardtitle">Title: Random Title</h1>
             <p className="cardmood">Mood: Sad  </p>
             <p className="cardbody">Content: Wafer chupa chups bonbon gummies icing lollipop gummies. Donut gummi bears chocolate cake pudding cheesecake cheesecake. Sesame snaps jelly-o fruitcake gingerbread icing pudding tiramisu. Marzipan topping tiramisu chocolate bar chocolate cake. Donut jelly tootsie roll oat cake macaroon. Toffee pie apple pie dragée powder fruitcake soufflé. Powder toffee apple pie bear claw toffee tart. Toffee shortbread lollipop topping gummi bears ice cream macaroon biscuit. Bear claw carrot cake caramels gingerbread chocolate bar. Soufflé donut chupa chups cupcake ice cream.
