@@ -14,6 +14,8 @@ ___
 
 </br>
 
+## IMPORTANT! - Only Spotify premium users can search and play songs
+
 ## FEATURES
 As a user you will be able to
 - Create blogs
@@ -25,6 +27,7 @@ As a user you will be able to
 </br>
 
 Planned Features
+- Find a way for non premium users to search for song metadata
 - Edit own blogs
 - Delete own blogs
 - Comment sections in blogs
