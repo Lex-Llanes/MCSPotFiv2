@@ -8,7 +8,7 @@ const CarouselComp = () => {
 
     return (
         <div>
-            <Carousel touch={true} interval={50000} className="carouselbody" >
+            <Carousel touch={true} interval={3000} className="carouselbody" >
 
                 <Carousel.Item>
                 <CarouselCard />
