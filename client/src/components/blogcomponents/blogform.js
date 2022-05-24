@@ -81,18 +81,6 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
             <form onSubmit={handleSubmitBlog}>
                 
 
-                <br/>   
-                <input 
-                className="blogforminputs"
-                    id="username"
-                    name="username"
-                    placeholder="Username..."
-                    value={userName}
-                    onChange={(event) => setUsername(event.target.value)}
-                />
-                <br/>
-                <br/>
-
                 <label for="blogprivacy">Blog Privacy</label>
                 <br/>
                 <select 
