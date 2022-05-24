@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import { Form } from "react-bootstrap";
 
 
 
@@ -80,8 +81,9 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
             <form onSubmit={handleSubmitBlog}>
                 
 
-                {/* <br/>   
+                <br/>   
                 <input 
+                className="blogforminputs"
                     id="username"
                     name="username"
                     placeholder="Username..."
@@ -89,11 +91,12 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
                     onChange={(event) => setUsername(event.target.value)}
                 />
                 <br/>
-                <br/> */}
+                <br/>
 
                 <label for="blogprivacy">Blog Privacy</label>
                 <br/>
                 <select 
+                className="blogforminputs"
                     id="blogprivacy"
                     name="blogprivacy"
                     value={blogPrivacy}
@@ -110,6 +113,7 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
                 <label for="usermood">Your Mood</label>
                 <br/>
                 <input
+                className="blogforminputs"
                     id="usermood"
                     name="usermood"
                     placeholder="Your mood..."
@@ -123,6 +127,7 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
                 <label for="blogtitle">Blog Title</label>
                 <br/>
                 <input 
+                className="blogforminputs"
                     name="blogtitle"
                     id="blogtitle"
                     type="text"
@@ -137,10 +142,12 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
                 <label for="blogcontent">Blog Content</label>
                 <br/>
                 <textarea 
-                    name="blogcontent"
+                    className="blogforminputs"
                     id="blogcontent"
                     type="textarea"
                     placeholder="Blog content..."
+                    cols="50"
+                    rows="20"
                     value={blogContent}
                     onChange={(event) => setBlogContent(event.target.value)}
                 />
@@ -148,6 +155,7 @@ const BlogForm = ({ blogArtist, blogTrack }) => {
                 <br/>
 
                 <input 
+                    className="blogformbutton"
                     type="submit"
                     value="Submit"
                 />
