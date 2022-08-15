@@ -27,6 +27,7 @@ export default function useAuth(code) {
 
 
   /**HANDLES TOKEN REFRESH - checks if there is a refreshToken or expiresIn, if not then refresh token **/
+  /** **/
   useEffect(() => {
     if (!refreshToken || !expiresIn) return
     const interval = setInterval(() => {
